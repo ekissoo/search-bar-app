@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from './components/SearchBar';
+import { ProductList } from './components/ProductList';
 
 function App() {
+  
+  /**
+   *Statefull variable that collect the results from API after filtering
+   * setResults will be passed to SearchBar and update with the fitered list in results
+  */
+  const [results, setResults] = React.useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Background Image */}
+      <div style={{ backgroundImage: "url(/images/bg.jpg)",
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize:'cover', minHeight:'100vh',minWidth:'100vw'}}>
+      
+      <div className = "search-bar-container">
+        <SearchBar setResults = {setResults}></SearchBar>
+        <ProductList results = {results}></ProductList>
+      </div>
+      </div>
     </div>
   );
 }
