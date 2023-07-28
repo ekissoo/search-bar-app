@@ -11,11 +11,11 @@ export const Wishlist = () =>{
     const [col, setCol] = React.useState("silver")
     let onChange = () =>{
         
-        if(col == 'silver')
+        if(col === 'silver')
         {
             setCol('red')
         }
-        if(col == 'red')
+        if(col ==='red')
             setCol('silver')
     }
     return (

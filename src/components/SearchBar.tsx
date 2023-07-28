@@ -1,5 +1,4 @@
 import "./SearchBar.css";
-import {faker} from '@faker-js/faker';
 import React, {useState} from "react";
 import {FaSearch} from "react-icons/fa";
 
